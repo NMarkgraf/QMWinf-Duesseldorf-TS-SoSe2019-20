@@ -1,0 +1,84 @@
+---
+title: "Weitere Schritte in R (DOZENTENFASSUNG)"
+author: "Norman Markgraf"
+date: "23 April 2019"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(mosaic)
+```
+
+## Der Trinkgeld-Datensatz
+
+Wir laden zu erst den Tipping-Datensatz aus dem Internet 
+
+```{r}
+download.file("https://goo.gl/whKjnl", destfile = "tips.csv")
+```
+
+Danach laden wir den Datensatz als "tips" in den Speicher:
+
+```{r}
+tips <- read.csv2("tips.csv")
+```
+
+
+Die Struktur von tips:
+
+```{r}
+str(tips)
+```
+
+
+```{r}
+prop( ~ sex, success = "Female", data=tips)
+```
+
+```{r}
+tally( ~ sex, data=tips)
+```
+
+```{r}
+tally( ~ sex,
+       format = "proportion",
+       data=tips)
+```
+
+
+```{r}
+gf_bar( ~ sex
+        | time,
+          data=tips)
+```
+
+```{r}
+tally( ~ sex
+        | time,
+          data=tips)
+```
+
+```{r}
+tally( ~ sex
+        | time,
+       format = "proportion",
+          data=tips)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

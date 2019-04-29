@@ -2,3 +2,5 @@
 .Rhistory
 .RData
 .Ruserdata
+tips.csv
+*.Rproj

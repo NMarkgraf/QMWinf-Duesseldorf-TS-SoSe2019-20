@@ -71,11 +71,43 @@ tally( ~ sex
 ## Vorlesung vom 29.4.2019
 
 
+## Vorlesung bom 06.05.2019
+
+```{r}
+library(mosaic)
+tips <- read.csv2("tips.csv")
+```
 
 
+## Offene Übung 61
+
+```{r}
+gf_boxplot(total_bill ~ smoker, data=tips)
+```
+
+```{r}
+gf_histogram(~ total_bill | smoker, data=tips)
+```
+
+```{r}
+favstats(total_bill ~ smoker, data=tips)
+```
+
+```{r}
+favstats(~ total_bill | smoker, data=tips)
+```
+
+```{r}
+iqr(total_bill ~ smoker, data=tips)
+```
 
 
-
+```{r}
+library(mosaic)
+set.seed(2009)
+muenzverteilung <- do(100) * rflip(n=10)
+gf_bar( ~ heads, data=muenzverteilung)
+```
 
 
 
